@@ -1,0 +1,28 @@
+int n,m;
+    Scanner in = new Scanner(System.in);
+    n = in.nextInt();
+    m = in.nextInt();
+    int index = 0;
+    int sum = 0;
+ 
+    for(int number=2;index<m;number++)
+    {
+        boolean isPrime = true;
+        for(int i=2;i<=Math.sqrt(number);i++)
+        {
+            if(number%i==0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
+        if(isPrime==true)
+        {
+            index++;
+            if(index>=n)
+            {
+                sum = sum + number;
+            }
+        }
+    }
+    System.out.println(sum);
